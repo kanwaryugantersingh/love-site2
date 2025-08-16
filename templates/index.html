@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Happy Birthday {{ name }} 🎉</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🎂 Happy Birthday, {{ name }} 🎉</h1>
+    <p class="love-msg">{{ message }}</p>
+
+    <img src="{{ url_for('static', filename='cake.png') }}" alt="Birthday Cake" class="cake">
+
+    <h2>Why You’re So Special 💕</h2>
+    <ul class="reasons">
+      {% for r in reasons %}
+      <li>{{ r }}</li>
+      {% endfor %}
+    </ul>
+
+    <!-- Changed onclick inline JS to id (cleaner, safer) -->
+    <button id="surprise-btn" class="btn">🎁 Open Your Surprise</button>
+    <p id="surprise" style="display:none;" class="surprise-text">
+      Siya, you are my dream come true 💖<br>
+      I promise to love you forever and ever 🌹✨
+    </p>
+
+    <div class="links">
+      <a href="/gallery" class="link-btn">📸 Our Memories</a>
+      <form action="/love-note" method="POST" class="note-form">
+        <textarea name="note" placeholder="Write a special note for Siya 💌" required></textarea>
+        <button type="submit" class="btn">Send Love Note ❤️</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

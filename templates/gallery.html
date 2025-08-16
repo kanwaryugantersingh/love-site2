@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Memories 💖</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Our Beautiful Memories 💕</h1>
+
+    <div class="gallery">
+        {% for file in [
+            'photos/photo1.jpg',
+            'photos/photo2.jpg',
+            'photos/photo3.jpg'
+        ] %}
+        <div class="photo">
+            <img src="{{ url_for('static', filename=file) }}" alt="Our Memory">
+        </div>
+        {% endfor %}
+    </div>
+
+    <a href="{{ url_for('index') }}">⬅ Back to Home</a>
+</body>
+</html>

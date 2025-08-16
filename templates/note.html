@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Love Note for {{ name }} 💌</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>💌 A Special Love Note for {{ name }}</h1>
+
+    <div class="note-box">
+      <p>{{ note }}</p>
+    </div>
+
+    <p class="footer-msg">Forever yours 💖</p>
+
+    <div class="links">
+      <a href="/" class="link-btn">🏠 Back Home</a>
+      <a href="/gallery" class="link-btn">📸 Memories</a>
+    </div>
+  </div>
+</body>
+</html>
